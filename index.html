@@ -18,11 +18,11 @@
 
                 <div class="item">
                     <!--  -->
-                    <img :src="slides[actualSlideIndex].image" :alt="slides[actualSlideIndex].title" />
+                    <img :src="slides[actualIndex].image" :alt="slides[actualIndex].title" />
                     <div class="text">
-                        <h3>{{slides[actualSlideIndex].title}}</h3>
+                        <h3>{{slides[actualIndex].title}}</h3>
                         <p>
-                            {{slides[actualSlideIndex].text}}
+                            {{slides[actualIndex].text}}
                         </p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="next" @click="nextSlide()"></div>
 
                     <!-- thumbnails -->
-                    <div v-for="(img, index) in slides" class="thumb">
+                    <div v-for="(img, index) in slides" class="thumb" :class="index === actualIndex ? 'active' : '' " @click="selectSlide(index)">
                         <img :src="img.image" :alt="img.title"/>
                     </div>
                 </div>

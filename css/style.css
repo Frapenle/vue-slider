@@ -54,7 +54,7 @@
 }
 
 .thumb.active {
-    border: 2px solid #ccc;
+    border: 2px solid red;
     opacity: 1;
 }
 
@@ -105,8 +105,4 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
-}
-
-.active {
-    border: 3px solid red;
 }

@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            actualSlideIndex: 0,
+            actualIndex: 0,
             slides: [{
                 image: 'img/01.webp',
                 title: 'Marvel\'s Spiderman Miles Morale',
@@ -35,16 +35,19 @@ createApp({
     
     methods: {
         previousSlide(){
-            this.actualSlideIndex--;
-            if(this.actualSlideIndex < 0) {
-                this.actualSlideIndex = this.slides.length - 1;
+            this.actualIndex--;
+            if(this.actualIndex < 0) {
+                this.actualIndex = this.slides.length - 1;
             }
         },
         nextSlide() {
-            this.actualSlideIndex++;
-            if (this.actualSlideIndex >= this.slides.length) {
-                this.actualSlideIndex = 0;
+            this.actualIndex++;
+            if (this.actualIndex >= this.slides.length) {
+                this.actualIndex = 0;
             }
+        },
+        selectSlide(selected) {
+            this.actualIndex = selected;
         }
     }
     
