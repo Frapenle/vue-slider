@@ -26,10 +26,13 @@
 
 .item .text {
     position: absolute;
-    right: 20px;
+    width: 100%;
+    right: 0px;
+    padding: 10px 20px;
     bottom: 20px;
     text-align: right;
     color: white;
+    background-color: rgba(126, 126, 126, 0.655);
 }
 
 .thumbs {
@@ -42,7 +45,6 @@
 .thumb {
     height: calc((300px) / 5);
     opacity: 0.5;
-    width: 200px;
 }
 
 .thumb img {
