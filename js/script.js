@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            message: 'Hello Vue!'
+            slideIndex: 0,
             slides: [{
                 image: 'img/01.webp',
                 title: 'Marvel\'s Spiderman Miles Morale',
@@ -31,5 +31,20 @@ createApp({
             }],
         }
     },
-
+    
+    methods: {
+        previousSlide(){
+            this.slideIndex--;
+            if(this.slideIndex < 0) {
+                this.slideIndex = this.slides.length - 1;
+            }
+        },
+        nextSlide() {
+            this.slideIndex++;
+            if (this.slideIndex >= this.slides.length) {
+                this.slideIndex = 0;
+            }
+        }
+    }
+    
 }).mount('#app')
